@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InferenceModel", "InferenceModel", "{C6445542-4820-48F8-8F42-DC787E60360E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.InferenceModel", "src\SkillRating.InferenceModel\SkillRating.InferenceModel.csproj", "{E8C41E5A-3765-47C7-991E-D5E76EA06816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.InferenceModel.UnitTests", "tests\SkillRating.InferenceModel.UnitTests\SkillRating.InferenceModel.UnitTests.csproj", "{6DE69100-44F6-41F0-AF5F-036CFF93BE99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8C41E5A-3765-47C7-991E-D5E76EA06816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C41E5A-3765-47C7-991E-D5E76EA06816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C41E5A-3765-47C7-991E-D5E76EA06816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C41E5A-3765-47C7-991E-D5E76EA06816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E8C41E5A-3765-47C7-991E-D5E76EA06816} = {C6445542-4820-48F8-8F42-DC787E60360E}
+		{6DE69100-44F6-41F0-AF5F-036CFF93BE99} = {C6445542-4820-48F8-8F42-DC787E60360E}
+	EndGlobalSection
+EndGlobal
