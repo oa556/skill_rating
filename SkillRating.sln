@@ -1,10 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InferenceModel", "InferenceModel", "{C6445542-4820-48F8-8F42-DC787E60360E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inference", "Inference", "{C6445542-4820-48F8-8F42-DC787E60360E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.InferenceModel", "src\SkillRating.InferenceModel\SkillRating.InferenceModel.csproj", "{E8C41E5A-3765-47C7-991E-D5E76EA06816}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.InferenceModule", "src\SkillRating.InferenceModule\SkillRating.InferenceModule.csproj", "{E8C41E5A-3765-47C7-991E-D5E76EA06816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.InferenceModel.UnitTests", "tests\SkillRating.InferenceModel.UnitTests\SkillRating.InferenceModel.UnitTests.csproj", "{6DE69100-44F6-41F0-AF5F-036CFF93BE99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.InferenceModule.UnitTests", "tests\SkillRating.InferenceModule.UnitTests\SkillRating.InferenceModule.UnitTests.csproj", "{6DE69100-44F6-41F0-AF5F-036CFF93BE99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Players", "Players", "{5A1A1862-8072-4571-BB2E-8267A8D6DC3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.PlayersModule", "src\SkillRating.PlayersModule\SkillRating.PlayersModule.csproj", "{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.SharedKernel", "src\SkillRating.SharedKernel\SkillRating.SharedKernel.csproj", "{EC356730-382C-4F66-BBF4-A71461D959A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.Api", "src\SkillRating.Api\SkillRating.Api.csproj", "{0D4797D1-F9FD-453C-B50F-30A4851410B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E503541E-D1EE-43C8-8239-B871D882F770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.Api.Contracts", "src\SkillRating.Api.Contracts\SkillRating.Api.Contracts.csproj", "{F192D7E6-3665-444E-B610-280E18CB9292}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +32,28 @@ Global
 		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DE69100-44F6-41F0-AF5F-036CFF93BE99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC356730-382C-4F66-BBF4-A71461D959A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC356730-382C-4F66-BBF4-A71461D959A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC356730-382C-4F66-BBF4-A71461D959A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC356730-382C-4F66-BBF4-A71461D959A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4797D1-F9FD-453C-B50F-30A4851410B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4797D1-F9FD-453C-B50F-30A4851410B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4797D1-F9FD-453C-B50F-30A4851410B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4797D1-F9FD-453C-B50F-30A4851410B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F192D7E6-3665-444E-B610-280E18CB9292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F192D7E6-3665-444E-B610-280E18CB9292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F192D7E6-3665-444E-B610-280E18CB9292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F192D7E6-3665-444E-B610-280E18CB9292}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E8C41E5A-3765-47C7-991E-D5E76EA06816} = {C6445542-4820-48F8-8F42-DC787E60360E}
 		{6DE69100-44F6-41F0-AF5F-036CFF93BE99} = {C6445542-4820-48F8-8F42-DC787E60360E}
+		{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE} = {5A1A1862-8072-4571-BB2E-8267A8D6DC3C}
+		{0D4797D1-F9FD-453C-B50F-30A4851410B3} = {E503541E-D1EE-43C8-8239-B871D882F770}
+		{F192D7E6-3665-444E-B610-280E18CB9292} = {E503541E-D1EE-43C8-8239-B871D882F770}
 	EndGlobalSection
 EndGlobal
