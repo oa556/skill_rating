@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SkillRating.Api.Contracts\SkillRating.Api.Contracts.csproj" />
+      <ProjectReference Include="..\SkillRating.MatchesModule\SkillRating.MatchesModule.csproj" />
       <ProjectReference Include="..\SkillRating.PlayersModule\SkillRating.PlayersModule.csproj" />
     </ItemGroup>
 
