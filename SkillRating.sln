@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.PlayersModule.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.MatchesModule.Contracts", "src\SkillRating.MatchesModule.Contracts\SkillRating.MatchesModule.Contracts.csproj", "{FF2D8977-442D-420E-B7FC-7F268FF2CAE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.MatchesModule.UnitTests", "tests\SkillRating.MatchesModule.UnitTests\SkillRating.MatchesModule.UnitTests.csproj", "{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{FF2D8977-442D-420E-B7FC-7F268FF2CAE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF2D8977-442D-420E-B7FC-7F268FF2CAE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF2D8977-442D-420E-B7FC-7F268FF2CAE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E8C41E5A-3765-47C7-991E-D5E76EA06816} = {C6445542-4820-48F8-8F42-DC787E60360E}
@@ -78,5 +84,6 @@ Global
 		{F9D7F8A3-E2E2-4654-AE0A-1D51E33BDAEE} = {630A1D7B-10B0-4030-882C-3375136D5E21}
 		{8CD7C8CB-7795-4C67-B46A-D8196AE1085C} = {5A1A1862-8072-4571-BB2E-8267A8D6DC3C}
 		{FF2D8977-442D-420E-B7FC-7F268FF2CAE2} = {630A1D7B-10B0-4030-882C-3375136D5E21}
+		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC} = {630A1D7B-10B0-4030-882C-3375136D5E21}
 	EndGlobalSection
 EndGlobal

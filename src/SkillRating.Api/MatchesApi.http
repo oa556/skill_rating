@@ -10,6 +10,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "winnerIds": ["DACE8545-15EB-478F-B8C4-209B17D32E2C"],
-  "loserIds": ["72B0BC4D-78E2-4D02-AE6D-539F7F06D4CE"]
+  "loserIds": ["DACE8545-15EB-478F-B8C4-209B17D32E2C"],
+  "winnerIds": ["72B0BC4D-78E2-4D02-AE6D-539F7F06D4CE"]
 }

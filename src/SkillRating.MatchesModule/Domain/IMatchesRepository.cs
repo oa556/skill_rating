@@ -8,5 +8,7 @@ public interface IMatchesRepository
         Guid playerId,
         CancellationToken cancellationToken = default);
 
+    Task<Match[]> ListAsync(CancellationToken cancellationToken = default);
+
     Task SaveChangesAsync();
 }

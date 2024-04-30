@@ -13,6 +13,10 @@ internal sealed class GetParticipantsQueryHandler(IPlayersRepository playersRepo
         GetParticipantsQuery request,
         CancellationToken cancellationToken)
     {
-        return await playersRepository.ListAsync(request.Ids, cancellationToken);
+        var players = await playersRepository.ListAsync(request.Ids, cancellationToken);
+
+        return players
+            .Select(p => new PlayerDto(p.Id, p.Name, p.ImageUrl))
+            .ToDictionary(p => p.Id);
     }
 }

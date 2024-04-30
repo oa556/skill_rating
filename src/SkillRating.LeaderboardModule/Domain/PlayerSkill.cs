@@ -1,3 +1,3 @@
 namespace SkillRating.LeaderboardModule.Domain;
 
-internal sealed record PlayerSkill(Guid Id, double Skill);
+internal sealed record PlayerSkill(Guid Id, int Skill);

@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SkillRating.SharedKernel\SkillRating.SharedKernel.csproj" />
+    </ItemGroup>
+
 </Project>

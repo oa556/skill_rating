@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +11,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddMatchesModule(
         this IServiceCollection services,
-        IConfiguration configuration)
+        IConfiguration configuration,
+        List<Assembly> mediatRAssemblies)
     {
         var connectionString = configuration.GetConnectionString("MatchesDatabase")
                                ?? throw new ArgumentNullException(nameof(configuration));
@@ -18,6 +20,8 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString));
 
         services.AddScoped<IMatchesRepository, MatchesRepository>();
+
+        mediatRAssemblies.Add(typeof(IMatchesModule).Assembly);
 
         return services;
     }

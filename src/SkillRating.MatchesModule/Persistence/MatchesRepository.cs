@@ -19,6 +19,16 @@ internal sealed class MatchesRepository(MatchesDbContext dbContext)
             .Matches
             .Include(m => m.Participants)
             .Where(m => m.Participants.Any(p => p.PlayerId == playerId))
+            .AsNoTracking()
+            .ToArrayAsync(cancellationToken);
+    }
+
+    public async Task<Match[]> ListAsync(CancellationToken cancellationToken = default)
+    {
+        return await dbContext
+            .Matches
+            .Include(m => m.Participants)
+            .AsNoTracking()
             .ToArrayAsync(cancellationToken);
     }
 

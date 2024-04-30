@@ -1,4 +1,5 @@
 using SkillRating.LeaderboardModule.Utils;
+using SkillRating.MatchesModule.Contracts;
 
 namespace SkillRating.LeaderboardModule.Domain;
 

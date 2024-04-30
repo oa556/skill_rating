@@ -12,6 +12,10 @@ internal sealed class GetOpponentsQueryHandler(IPlayersRepository playersReposit
         GetOpponentsQuery request,
         CancellationToken cancellationToken)
     {
-        return await playersRepository.ListAsync(request.PlayerId, cancellationToken);
+        var players = await playersRepository.ListAsync(request.PlayerId, cancellationToken);
+
+        return players
+            .Select(p => new PlayerDto(p.Id, p.Name, p.ImageUrl))
+            .ToArray();
     }
 }

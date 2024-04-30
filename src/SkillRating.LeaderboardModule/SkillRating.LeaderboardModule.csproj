@@ -7,14 +7,26 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="EFCore.BulkExtensions" Version="8.0.3" />
       <PackageReference Include="MediatR" Version="12.2.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
       <PackageReference Include="Microsoft.ML.Probabilistic.Compiler" Version="0.4.2403.801" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <PackageReference Include="Quartz" Version="3.8.1" />
+      <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.8.1" />
+      <PackageReference Include="Quartz.Extensions.Hosting" Version="3.8.1" />
     </ItemGroup>
 
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
             <_Parameter1>SkillRating.LeaderboardModule.UnitTests</_Parameter1>
         </AssemblyAttribute>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SkillRating.MatchesModule.Contracts\SkillRating.MatchesModule.Contracts.csproj" />
+      <ProjectReference Include="..\SkillRating.PlayersModule.Contracts\SkillRating.PlayersModule.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

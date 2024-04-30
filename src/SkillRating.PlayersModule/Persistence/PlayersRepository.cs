@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using SkillRating.Api.Contracts.Players;
 using SkillRating.PlayersModule.Domain;
 
 namespace SkillRating.PlayersModule.Persistence;
@@ -17,26 +16,26 @@ internal sealed class PlayersRepository(PlayersDbContext dbContext)
         return await dbContext.Players.FindAsync(id);
     }
 
-    public async Task<PlayerDto[]> ListAsync(
+    public async Task<Player[]> ListAsync(
         Guid id,
         CancellationToken cancellationToken = default)
     {
         return await dbContext
             .Players
             .Where(p => p.Id != id)
-            .Select(p => new PlayerDto(p.Id, p.Name, p.ImageUrl))
+            .AsNoTracking()
             .ToArrayAsync(cancellationToken);
     }
 
-    public async Task<Dictionary<Guid, PlayerDto>> ListAsync(
+    public async Task<Player[]> ListAsync(
         Guid[] ids,
         CancellationToken cancellationToken = default)
     {
         return await dbContext
             .Players
             .Where(p => ids.Contains(p.Id))
-            .Select(p => new PlayerDto(p.Id, p.Name, p.ImageUrl))
-            .ToDictionaryAsync(p => p.Id, cancellationToken);
+            .AsNoTracking()
+            .ToArrayAsync(cancellationToken);
     }
 
     public async Task SaveChangesAsync()

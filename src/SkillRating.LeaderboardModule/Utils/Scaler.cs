@@ -13,10 +13,10 @@ internal sealed class Scaler(
 
     private double SourceRangeStart { get; } = sourceRangeStart;
     private double TargetRangeStart { get; } = targetRangeStart;
-    private double ScaleFactor { get; } = (targetRangeEnd - targetRangeStart) / (sourceRangeEnd - sourceRangeStart);
+    private readonly double _scaleFactor = (targetRangeEnd - targetRangeStart) / (sourceRangeEnd - sourceRangeStart);
 
-    public double Scale(Gaussian skill)
+    public int Scale(Gaussian skill)
     {
-        return TargetRangeStart + (skill.GetMean() - SourceRangeStart) * ScaleFactor;
+        return (int)Math.Round(TargetRangeStart + (skill.GetMean() - SourceRangeStart) * _scaleFactor);
     }
 }

@@ -1,0 +1,6 @@
+@Leaderboard.Api_HostAddress = https://localhost:44303/leaderboard
+
+GET {{Leaderboard.Api_HostAddress}}
+Accept: application/json
+
+###

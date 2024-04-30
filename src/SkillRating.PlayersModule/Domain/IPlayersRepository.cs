@@ -1,5 +1,3 @@
-using SkillRating.Api.Contracts.Players;
-
 namespace SkillRating.PlayersModule.Domain;
 
 public interface IPlayersRepository
@@ -8,11 +6,11 @@ public interface IPlayersRepository
 
     Task<Player?> GetByIdAsync(Guid id);
 
-    Task<PlayerDto[]> ListAsync(
+    Task<Player[]> ListAsync(
         Guid id,
         CancellationToken cancellationToken = default);
 
-    Task<Dictionary<Guid, PlayerDto>> ListAsync(
+    Task<Player[]> ListAsync(
         Guid[] ids,
         CancellationToken cancellationToken = default);
 

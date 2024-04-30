@@ -1,22 +1,22 @@
 using FluentAssertions;
-using SkillRating.LeaderboardModule.Application;
 using SkillRating.LeaderboardModule.Domain;
+using SkillRating.LeaderboardModule.Utils;
+using SkillRating.MatchesModule.Contracts;
 using Xunit;
 
 namespace SkillRating.LeaderboardModule.UnitTests;
 
-public sealed class CalculateCommandHandlerTests
+public sealed class InferenceAlgorithmTests
 {
     [Fact]
-    public async Task CalculatesForIndividuals()
+    public void InfersSkillsForIndividuals()
     {
         var expectedPlayerSkills = new PlayerSkill[] {
-            new( Id: Guid.NewGuid(), Skill: 100.0000 ),
-            new( Id: Guid.NewGuid(), Skill: 78.9114 ),
-            new( Id: Guid.NewGuid(), Skill: 52.7376 ),
-            new( Id: Guid.NewGuid(), Skill: 1.0000 )
+            new( Id: Guid.NewGuid(), Skill: 100 ),
+            new( Id: Guid.NewGuid(), Skill: 79 ),
+            new( Id: Guid.NewGuid(), Skill: 53 ),
+            new( Id: Guid.NewGuid(), Skill: 1 )
         };
-
         var matches = new MatchResult[]
         {
             new(
@@ -30,22 +30,33 @@ public sealed class CalculateCommandHandlerTests
                 LoserIds: [ expectedPlayerSkills[3].Id ]) // 3 > 4
         };
 
-        var handler = new CalculateCommandHandler(new InferenceAlgorithm());
-        var actualPlayerSkills = await handler.Handle(new CalculateCommand(matches), default);
+        var parameters = new ObservedParameters(matches);
+        var inferredSkills = new InferenceAlgorithm().Infer(parameters);
+        var scaler = new Scaler(
+            inferredSkills.Min(g => g.GetMean()),
+            inferredSkills.Max(g => g.GetMean()));
+        var actualPlayerSkills = inferredSkills
+            .Select((g, i) =>
+            {
+                var id = parameters.GetPlayerId(i);
+                var skill = scaler.Scale(g);
+                return new PlayerSkill(id, skill);
+            })
+            .OrderByDescending(ps => ps.Skill)
+            .ToArray();
 
         AssertEqual(expectedPlayerSkills, actualPlayerSkills);
     }
 
     [Fact]
-    public async Task CalculatesForTeamsAndIndividuals()
+    public void InfersSkillsForTeamsAndIndividuals()
     {
         var expectedPlayerSkills = new PlayerSkill[] {
-            new( Id: Guid.NewGuid(), Skill: 100.0000 ),
-            new( Id: Guid.NewGuid(), Skill: 72.1323 ),
-            new( Id: Guid.NewGuid(), Skill: 28.8676 ),
-            new( Id: Guid.NewGuid(), Skill: 1.0000 )
+            new( Id: Guid.NewGuid(), Skill: 100 ),
+            new( Id: Guid.NewGuid(), Skill: 72 ),
+            new( Id: Guid.NewGuid(), Skill: 29 ),
+            new( Id: Guid.NewGuid(), Skill: 1 )
         };
-
         var matches = new MatchResult[]
         {
             new(
@@ -59,8 +70,20 @@ public sealed class CalculateCommandHandlerTests
                 LoserIds: [ expectedPlayerSkills[2].Id ]) // 2 > 3
         };
 
-        var handler = new CalculateCommandHandler(new InferenceAlgorithm());
-        var actualPlayerSkills = await handler.Handle(new CalculateCommand(matches), default);
+        var parameters = new ObservedParameters(matches);
+        var inferredSkills = new InferenceAlgorithm().Infer(parameters);
+        var scaler = new Scaler(
+            inferredSkills.Min(g => g.GetMean()),
+            inferredSkills.Max(g => g.GetMean()));
+        var actualPlayerSkills = inferredSkills
+            .Select((g, i) =>
+            {
+                var id = parameters.GetPlayerId(i);
+                var skill = scaler.Scale(g);
+                return new PlayerSkill(id, skill);
+            })
+            .OrderByDescending(ps => ps.Skill)
+            .ToArray();
 
         AssertEqual(expectedPlayerSkills, actualPlayerSkills);
     }
@@ -79,6 +102,6 @@ public sealed class CalculateCommandHandlerTests
     private static void AssertEqual(PlayerSkill expected, PlayerSkill actual)
     {
         expected.Id.Should().Be(actual.Id);
-        expected.Skill.Should().BeApproximately(actual.Skill, precision: 0.0001);
+        expected.Skill.Should().Be(actual.Skill);
     }
 }

@@ -10,7 +10,7 @@ internal sealed class InferenceAlgorithm
     private const int SkillsMean = 6;
     private const int SkillsVariance = 9;
 
-    public static Gaussian[] Infer(ObservedParameters parameters)
+    public Gaussian[] Infer(ObservedParameters parameters)
     {
         // Matches
         var matchCount = Variable.Observed(default(int));
