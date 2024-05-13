@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SkillRating.App.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SkillRating.App"
+    Shell.FlyoutBehavior="Disabled"
+    Title="SkillRating.App">
+
+    <TabBar>
+        <Tab Title="Leaderboard" Icon="ic_leaderboard.svg">
+            <ShellContent
+                Title="Leaderboard"
+                ContentTemplate="{DataTemplate local:LeaderboardPage}"
+                Route="MainPage"/>
+        </Tab>
+        <Tab Title="Matches" Icon="ic_activity.svg">
+            <ShellContent
+                Title="Matches"
+                ContentTemplate="{DataTemplate local:MatchesPage}"
+                Route="MainPage"/>
+        </Tab>
+    </TabBar>
+
+</Shell>

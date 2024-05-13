@@ -30,20 +30,7 @@ public sealed class InferenceAlgorithmTests
                 LoserIds: [ expectedPlayerSkills[3].Id ]) // 3 > 4
         };
 
-        var parameters = new ObservedParameters(matches);
-        var inferredSkills = new InferenceAlgorithm().Infer(parameters);
-        var scaler = new Scaler(
-            inferredSkills.Min(g => g.GetMean()),
-            inferredSkills.Max(g => g.GetMean()));
-        var actualPlayerSkills = inferredSkills
-            .Select((g, i) =>
-            {
-                var id = parameters.GetPlayerId(i);
-                var skill = scaler.Scale(g);
-                return new PlayerSkill(id, skill);
-            })
-            .OrderByDescending(ps => ps.Skill)
-            .ToArray();
+        var actualPlayerSkills = CalculateSkills(matches);
 
         AssertEqual(expectedPlayerSkills, actualPlayerSkills);
     }
@@ -70,12 +57,21 @@ public sealed class InferenceAlgorithmTests
                 LoserIds: [ expectedPlayerSkills[2].Id ]) // 2 > 3
         };
 
+        var actualPlayerSkills = CalculateSkills(matches);
+
+        AssertEqual(expectedPlayerSkills, actualPlayerSkills);
+    }
+
+
+    private static PlayerSkill[] CalculateSkills(MatchResult[] matches)
+    {
         var parameters = new ObservedParameters(matches);
         var inferredSkills = new InferenceAlgorithm().Infer(parameters);
         var scaler = new Scaler(
             inferredSkills.Min(g => g.GetMean()),
             inferredSkills.Max(g => g.GetMean()));
-        var actualPlayerSkills = inferredSkills
+
+        return inferredSkills
             .Select((g, i) =>
             {
                 var id = parameters.GetPlayerId(i);
@@ -84,10 +80,7 @@ public sealed class InferenceAlgorithmTests
             })
             .OrderByDescending(ps => ps.Skill)
             .ToArray();
-
-        AssertEqual(expectedPlayerSkills, actualPlayerSkills);
     }
-
 
     private static void AssertEqual(PlayerSkill[] expected, PlayerSkill[] actual)
     {

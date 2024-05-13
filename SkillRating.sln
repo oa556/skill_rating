@@ -1,32 +1,39 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Leaderboard", "Leaderboard", "{C6445542-4820-48F8-8F42-DC787E60360E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.LeaderboardModule", "src\SkillRating.LeaderboardModule\SkillRating.LeaderboardModule.csproj", "{E8C41E5A-3765-47C7-991E-D5E76EA06816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.LeaderboardModule", "src\SkillRating.LeaderboardModule\SkillRating.LeaderboardModule.csproj", "{E8C41E5A-3765-47C7-991E-D5E76EA06816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.LeaderboardModule.UnitTests", "tests\SkillRating.LeaderboardModule.UnitTests\SkillRating.LeaderboardModule.UnitTests.csproj", "{6DE69100-44F6-41F0-AF5F-036CFF93BE99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.LeaderboardModule.UnitTests", "tests\SkillRating.LeaderboardModule.UnitTests\SkillRating.LeaderboardModule.UnitTests.csproj", "{6DE69100-44F6-41F0-AF5F-036CFF93BE99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Players", "Players", "{5A1A1862-8072-4571-BB2E-8267A8D6DC3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.PlayersModule", "src\SkillRating.PlayersModule\SkillRating.PlayersModule.csproj", "{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.PlayersModule", "src\SkillRating.PlayersModule\SkillRating.PlayersModule.csproj", "{0A8D31EB-A93F-472D-9CC3-E1A092BA2DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.SharedKernel", "src\SkillRating.SharedKernel\SkillRating.SharedKernel.csproj", "{EC356730-382C-4F66-BBF4-A71461D959A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.SharedKernel", "src\SkillRating.SharedKernel\SkillRating.SharedKernel.csproj", "{EC356730-382C-4F66-BBF4-A71461D959A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.Api", "src\SkillRating.Api\SkillRating.Api.csproj", "{0D4797D1-F9FD-453C-B50F-30A4851410B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.Api", "src\SkillRating.Api\SkillRating.Api.csproj", "{0D4797D1-F9FD-453C-B50F-30A4851410B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E503541E-D1EE-43C8-8239-B871D882F770}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.Api.Contracts", "src\SkillRating.Api.Contracts\SkillRating.Api.Contracts.csproj", "{F192D7E6-3665-444E-B610-280E18CB9292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.Api.Contracts", "src\SkillRating.Api.Contracts\SkillRating.Api.Contracts.csproj", "{F192D7E6-3665-444E-B610-280E18CB9292}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Matches", "Matches", "{630A1D7B-10B0-4030-882C-3375136D5E21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.MatchesModule", "src\SkillRating.MatchesModule\SkillRating.MatchesModule.csproj", "{F9D7F8A3-E2E2-4654-AE0A-1D51E33BDAEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.MatchesModule", "src\SkillRating.MatchesModule\SkillRating.MatchesModule.csproj", "{F9D7F8A3-E2E2-4654-AE0A-1D51E33BDAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.PlayersModule.Contracts", "src\SkillRating.PlayersModule.Contracts\SkillRating.PlayersModule.Contracts.csproj", "{8CD7C8CB-7795-4C67-B46A-D8196AE1085C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.PlayersModule.Contracts", "src\SkillRating.PlayersModule.Contracts\SkillRating.PlayersModule.Contracts.csproj", "{8CD7C8CB-7795-4C67-B46A-D8196AE1085C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.MatchesModule.Contracts", "src\SkillRating.MatchesModule.Contracts\SkillRating.MatchesModule.Contracts.csproj", "{FF2D8977-442D-420E-B7FC-7F268FF2CAE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.MatchesModule.Contracts", "src\SkillRating.MatchesModule.Contracts\SkillRating.MatchesModule.Contracts.csproj", "{FF2D8977-442D-420E-B7FC-7F268FF2CAE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.MatchesModule.UnitTests", "tests\SkillRating.MatchesModule.UnitTests\SkillRating.MatchesModule.UnitTests.csproj", "{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillRating.MatchesModule.UnitTests", "tests\SkillRating.MatchesModule.UnitTests\SkillRating.MatchesModule.UnitTests.csproj", "{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{A6D257BC-EA7F-4275-8207-817250FDC12F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillRating.App", "src\SkillRating.App\SkillRating.App.csproj", "{9C40A749-B1B2-4F14-9630-35C582F431D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +81,15 @@ Global
 		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C40A749-B1B2-4F14-9630-35C582F431D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C40A749-B1B2-4F14-9630-35C582F431D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C40A749-B1B2-4F14-9630-35C582F431D7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9C40A749-B1B2-4F14-9630-35C582F431D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C40A749-B1B2-4F14-9630-35C582F431D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C40A749-B1B2-4F14-9630-35C582F431D7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E8C41E5A-3765-47C7-991E-D5E76EA06816} = {C6445542-4820-48F8-8F42-DC787E60360E}
@@ -85,5 +101,9 @@ Global
 		{8CD7C8CB-7795-4C67-B46A-D8196AE1085C} = {5A1A1862-8072-4571-BB2E-8267A8D6DC3C}
 		{FF2D8977-442D-420E-B7FC-7F268FF2CAE2} = {630A1D7B-10B0-4030-882C-3375136D5E21}
 		{1662D51C-6847-4ECB-BCCF-2055F60A7DBC} = {630A1D7B-10B0-4030-882C-3375136D5E21}
+		{9C40A749-B1B2-4F14-9630-35C582F431D7} = {A6D257BC-EA7F-4275-8207-817250FDC12F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13D45C57-E8E7-40F3-9D9A-E170BF81D1BD}
 	EndGlobalSection
 EndGlobal
